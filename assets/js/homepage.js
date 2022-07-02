@@ -5,23 +5,26 @@ var repoSearchTerm = document.querySelector("#repo-search-term");
 
 var formSubmitHandler = function(event) {
   event.preventDefault();
+
+  // get value from input element
+  var username = nameInputEl.ariaValueMax.trim();
+
+  if (username) {
+    getUserRepos(username);
+    nameInputEl.value = "";
+  } else {
+    alert("Please enter a GitHub username");
+  };
+
   console.log(event);
 };
-
-// get value from input element
-var username = nameInputEl.ariaValueMax.trim();
 
 
 
 var getUserRepos = function(user) {
   // format the github api url
   var apiUrl = "https://api.github.com/users/" + user + "/repos";
-if (username) {
-  getUserRepos(username);
-  nameInputEl.value = "";
-} else {
-  alert("Please enter a GitHub username");
-};
+
   // make a get request to url
   fetch(apiUrl).then(function(response) {
     console.log(response);

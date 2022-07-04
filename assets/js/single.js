@@ -35,7 +35,7 @@ var displayIssues = function(issues) {
         issueContainerEl.textContent = "This repo has no open issues!";
         return;
     }
-
+    console.log(issueContainerEl);
     issueContainerEl.appendChild(issueEl);
 
     for (var i = 0; i < issues.length; i++) {

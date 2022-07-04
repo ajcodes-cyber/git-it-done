@@ -19,8 +19,6 @@ var formSubmitHandler = function(event) {
   console.log(event);
 };
 
-
-
 var getUserRepos = function(user) {
   // format the github api url
   var apiUrl = "https://api.github.com/users/" + user + "/repos";
@@ -41,7 +39,7 @@ var displayRepos = function(repos, searchTerm) {
   console.log(repos);
   console.log(searchTerm);
 
-  // clar old content
+  // clear old content
   repoContainerEl.textcontent = "";
   repoSearchTerm.textContent = searchTerm;
 

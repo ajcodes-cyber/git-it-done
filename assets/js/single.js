@@ -1,3 +1,4 @@
+var limitWarningEl = document.querySelector("#limit-warning");
 var issueContainerEl = document.querySelector("#issues-container");
 var getRepoIssues = function(repo) {
     console.log(repo);
